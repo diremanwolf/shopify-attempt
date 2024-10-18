@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tennis Shop</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap">
+    <link rel="stylesheet" href="{{ 'base.css' | asset_url }}">
+  </head>
+  <body>
+    <!-- Navbar -->
+    <header>
+      <nav>
+        <div class="logo">
+          <img src="{{ 'logo.png' | asset_url }}" alt="Tennis Logo">
+        </div>
+        <ul class="nav-links">
+          <li><a href="#">Inicio</a></li>
+          <li><a href="#">Acerca de nosotros</a></li>
+          <li><a href="#">Historia</a></li>
+          <li><a href="#">Contacto</a></li>
+        </ul>
+        <div class="language-toggle"><a href="#">ES</a> | <a href="#">EN</a></div>
+        <div class="menu-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Las mejores raquetas para jugar <span class="highlight">Tennis</span></h1>
+        <a href="#" class="btn">ACERCA DE NOSOTROS</a>
+      </div>
+    </section>
+
+    <!-- Section after Hero -->
+    <section class="product-section">
+      <div class="content">
+        <span class="category">TENNIS</span>
+        <h2>Raquetas. Accesorios. Pelotas.</h2>
+        <p>Conoce nuestras raquetas y aprende a jugar Tennis cómo un profesional.</p>
+        <a href="#" class="btn-history">HISTORIA <span>→</span></a>
+      </div>
+    </section>
+
+    <!-- Section for Tennis Raquetas with Carousel -->
+    <section class="carousel-section">
+      <div class="carousel-container">
+        <!-- Left side content -->
+        <div class="left-content">
+          <div class="left-inner">
+            <h2><span>Nuestras</span> Raquetas</h2>
+            <p>Conoce nuestras raquetas y aprende a jugar Tennis cómo un profesional.</p>
+            <div class="carousel-controls">
+              <button class="prev-btn"><i>←</i></button>
+              <button class="next-btn"><i>→</i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right side carousel -->
+        <div class="right-content">
+          <div class="carousel-wrapper">
+            <div class="carousel">
+              <!-- Carousel items (repeating 5 items) -->
+              {% for i in (1..3) %}
+                <div class="carousel-item">
+                  <img src="{{ 'tennis-racket.jpg' | asset_url }}" alt="racket_{{ i }}">
+                  <span class="item-number">{{ i }}</span>
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      // Menu Toggle for mobile
+      document.querySelector('.menu-toggle').addEventListener('click', function () {
+        document.querySelector('.nav-links').classList.toggle('active');
+      });
+    </script>
+  </body>
+</html>
