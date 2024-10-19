@@ -368,7 +368,6 @@ ul {
 
 #l-side-text p {
   font-size: 18px;
-  line-height: 1.6;
 }
 
 #l-side-dots {
@@ -403,6 +402,10 @@ ul {
   border: 1px solid #fff;
 
   padding: 20px;
+}
+
+#l-side-buttons span:first-child img {
+  transform: rotate(180deg);
 }
 
 #l-side-buttons span:first-child {
