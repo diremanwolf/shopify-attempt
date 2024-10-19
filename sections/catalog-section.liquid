@@ -1,0 +1,36 @@
+<section id="getmore-catalog">
+  <div id="catalog-l-side">
+    <div id="l-side-text">
+      <h2 class="font-normal">Nuestras <strong>Raquetas</strong></h2>
+      <p>Conoce nuestras raquetas y aprende a jugar Tennis cómo un profesional.</p>
+    </div>
+
+    <div id="l-side-dots">
+      {% for i in (1..4) %}
+        <span class="dot"></span>
+      {% endfor %}
+    </div>
+
+    <div id="l-side-buttons">
+      <span class="prev">
+        <img src="{{ 'caret.svg' | asset_url }}">
+      </span>
+      <span class="next">
+        <img src="{{ 'caret.svg' | asset_url }}">
+      </span>
+    </div>
+  </div>
+
+  <div id="catalog-r-side">
+    {% for i in (1..5) %}
+      <div class="r-side-item">
+        <img
+          src="{{ 'item.jpg' | asset_url }}"
+          srcset="{{ 'item@2x.jpg' | asset_url }} 2x, {{ 'item@3x.jpg' | asset_url }} 3x"
+          alt="The image of a red and black racquet."
+        >
+        <span class="item-index">{{ i }}</span>
+      </div>
+    {% endfor %}
+  </div>
+</section>

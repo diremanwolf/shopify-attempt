@@ -1,10 +1,26 @@
 {
   "sections": {
-    "homepage": {
-      "type": "homepage",
+    "header": {
+      "type": "header",
+    },
+    "info": {
+      "type": "info-section"
+    },
+    "catalog": {
+      "type": "catalog-section"
+    },
+    "banner": {
+      "type": "banner-section"
+    },
+    "footer": {
+      "type": "footer"
     }
   },
   "order": [
-    "homepage"
+    "header",
+    "info",
+    "catalog",
+    "banner",
+    "footer"
   ]
 }
