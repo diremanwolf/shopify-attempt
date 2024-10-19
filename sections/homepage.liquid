@@ -1,88 +1,179 @@
 <!doctype html>
-<html lang="es">
+<html lang="en">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tennis Shop</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap">
-    <link rel="stylesheet" href="{{ 'base.css' | asset_url }}">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Shopify Attempt Plain</title>
+
+    <link href="https://fonts.cdnfonts.com/css/helvetica-neue-5" rel="stylesheet">
   </head>
+
   <body>
-    <!-- Navbar -->
-    <header>
-      <nav>
-        <div class="logo">
-          <img src="{{ 'logo.png' | asset_url }}" alt="Tennis Logo">
+    <header id="getmore-header" class="getmore-header">
+      <div id="header-logo" class="header-logo">
+        <img
+          src="{{ 'logo.png' | asset_url }}"
+          srcset="{{ 'logo@2x.png' | asset_url }} 2x, {{ 'logo@3x.png' | asset_url }} 3x"
+          alt="The logo is a white tennis ball."
+        >
+      </div>
+
+      <div id="header-menu" class="header-menu">
+        <nav>
+          <ul class="links">
+            <li class="font-normal">
+              <a href="#">Inicio</a>
+              <div></div>
+            </li>
+            <li class="font-normal"><a href="#">Acerca de nosotros</a></li>
+            <li class="font-normal"><a href="#">Historia</a></li>
+            <li class="font-normal"><a href="#">Contacto</a></li>
+          </ul>
+
+          <div class="lang-toggle"><a href="#">ES </a><a href="#"> EN</a></div>
+
+          <div id="menu-toggle" class="menu-toggle">
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </nav>
+
+        <div id="header-hero" class="header-hero">
+          <h1 class="title font-normal">Las mejores raquetas para jugar <strong>Tennis</strong></h1>
+          <div class="button">Acerca de Nosotros &#10230;</div>
         </div>
-        <ul class="nav-links">
-          <li><a href="#">Inicio</a></li>
-          <li><a href="#">Acerca de nosotros</a></li>
-          <li><a href="#">Historia</a></li>
-          <li><a href="#">Contacto</a></li>
-        </ul>
-        <div class="language-toggle"><a href="#">ES</a> | <a href="#">EN</a></div>
-        <div class="menu-toggle">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </nav>
+      </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-      <div class="hero-content">
-        <h1>Las mejores raquetas para jugar <span class="highlight">Tennis</span></h1>
-        <a href="#" class="btn">ACERCA DE NOSOTROS</a>
+    <section id="getmore-info" class="getmore-info">
+      <h2 class="title">Tennis</h2>
+
+      <div class="text">
+        <h2 class="font-normal">Raquetas. Accesorios. Pelotas.</h2>
+        <p class="font-normal">Conoce nuestras raquetas y aprende a jugar Tennis cómo un profesional.</p>
       </div>
+
+      <div class="button">Historia<span>&#10230;</span></div>
     </section>
 
-    <!-- Section after Hero -->
-    <section class="product-section">
-      <div class="content">
-        <span class="category">TENNIS</span>
-        <h2>Raquetas. Accesorios. Pelotas.</h2>
-        <p>Conoce nuestras raquetas y aprende a jugar Tennis cómo un profesional.</p>
-        <a href="#" class="btn-history">HISTORIA <span>→</span></a>
-      </div>
-    </section>
-
-    <!-- Section for Tennis Raquetas with Carousel -->
-    <section class="carousel-section">
-      <div class="carousel-container">
-        <!-- Left side content -->
-        <div class="left-content">
-          <div class="left-inner">
-            <h2><span>Nuestras</span> Raquetas</h2>
-            <p>Conoce nuestras raquetas y aprende a jugar Tennis cómo un profesional.</p>
-            <div class="carousel-controls">
-              <button class="prev-btn"><i>←</i></button>
-              <button class="next-btn"><i>→</i></button>
-            </div>
-          </div>
+    <section id="getmore-catalog">
+      <div id="catalog-l-side">
+        <div id="l-side-text">
+          <h2 class="font-normal">Nuestras <strong>Raquetas</strong></h2>
+          <p>Conoce nuestras raquetas y aprende a jugar Tennis cómo un profesional.</p>
         </div>
 
-        <!-- Right side carousel -->
-        <div class="right-content">
-          <div class="carousel-wrapper">
-            <div class="carousel">
-              <!-- Carousel items (repeating 5 items) -->
-              {% for i in (1..3) %}
-                <div class="carousel-item">
-                  <img src="{{ 'tennis-racket.jpg' | asset_url }}" alt="racket_{{ i }}">
-                  <span class="item-number">{{ i }}</span>
-                </div>
-              {% endfor %}
-            </div>
+        <div id="l-side-dots">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+
+        <div id="l-side-buttons">
+          <span class="prev">&#11207;</span>
+          <span class="next">&#x2BC8;</span>
+        </div>
+      </div>
+
+      <div id="catalog-r-side">
+        <div class="r-side-item">
+          <div class="item-more">
+            <h2>Ver catálogo de productos</h2>
           </div>
+
+          <img
+            src="{{ 'item.jpg' | asset_url }}"
+            srcset="{{ 'item@2x.jpg' | asset_url }} 2x, {{ 'item@3x.jpg' | asset_url }} 3x"
+            alt="The image of a red and black racquet with its index inside a green circle in the top left corner of the image."
+          >
+
+          <span class="item-index">1</span>
+        </div>
+
+        <div class="r-side-item">
+          <img
+            src="{{ 'item.jpg' | asset_url }}"
+            srcset="{{ 'item@2x.jpg' | asset_url }} 2x, {{ 'item@3x.jpg' | asset_url }} 3x"
+            alt="The image of a red and black racquet with its index inside a green circle in the top left corner of the image."
+          >
+
+          <span class="item-index">2</span>
+        </div>
+
+        <div class="r-side-item">
+          <img
+            src="{{ 'item.jpg' | asset_url }}"
+            srcset="{{ 'item@2x.jpg' | asset_url }} 2x, {{ 'item@3x.jpg' | asset_url }} 3x"
+            alt="The image of a red and black racquet with its index inside a green circle in the top left corner of the image."
+          >
+
+          <span class="item-index">3</span>
+        </div>
+
+        <div class="r-side-item">
+          <img
+            src="{{ 'item.jpg' | asset_url }}"
+            srcset="{{ 'item@2x.jpg' | asset_url }} 2x, {{ 'item@3x.jpg' | asset_url }} 3x"
+            alt="The image of a red and black racquet with its index inside a green circle in the top left corner of the image."
+          >
+
+          <span class="item-index">4</span>
+        </div>
+
+        <div class="r-side-item">
+          <img
+            src="{{ 'item.jpg' | asset_url }}"
+            srcset="{{ 'item@2x.jpg' | asset_url }} 2x, {{ 'item@3x.jpg' | asset_url }} 3x"
+            alt="The image of a red and black racquet with its index inside a green circle in the top left corner of the image."
+          >
+
+          <span class="item-index">5</span>
         </div>
       </div>
     </section>
+
+    <section id="getmore-banner" class="getmore-banner"></section>
+
+    <footer id="getmore-footer" class="getmore-footer">
+      <div id="footer-menu">
+        <nav>
+          <ul class="links">
+            <li class="font-normal"><a href="#">Inicio</a></li>
+            <li class="font-normal"><a href="#">Acerca de nosotros</a></li>
+            <li class="font-normal"><a href="#">Historia</a></li>
+            <li class="font-normal"><a href="#">Contacto</a></li>
+          </ul>
+
+          <div class="menu-social">
+            <a href="#"><img src="{{ 'linkedin.svg' | asset_url }}" alt="LinkedIn"></a>
+            <a href="#"><img src="{{ 'vimeo.svg' | asset_url }}" alt="Vimeo"></a>
+            <a href="#"><img src="{{ 'instagram.svg' | asset_url }}" alt="Instagram"></a>
+            <a href="#"><img src="{{ 'twitter.svg' | asset_url }}" alt="Twitter"></a>
+            <a href="#"><img src="{{ 'facebook.svg' | asset_url }}" alt="Facebook"></a>
+          </div>
+        </nav>
+      </div>
+
+      <div id="footer-logo">
+        <img
+          src="{{ 'logo.png' | asset_url }}"
+          srcset="{{ 'logo@2x.png' | asset_url }} 2x, {{ 'logo@3x.png' | asset_url }} 3x"
+          alt="The logo is a white tennis ball."
+        >
+      </div>
+    </footer>
 
     <script>
-      // Menu Toggle for mobile
-      document.querySelector('.menu-toggle').addEventListener('click', function () {
-        document.querySelector('.nav-links').classList.toggle('active');
+      // JavaScript to handle the menu toggle
+      const menuToggle = document.getElementById('menu-toggle');
+      const links = document.querySelector('.links');
+
+      menuToggle.addEventListener('click', () => {
+        links.classList.toggle('show');
       });
     </script>
   </body>
